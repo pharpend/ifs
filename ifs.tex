@@ -1,0 +1,96 @@
+\documentclass[12pt,letterpaper,oneside]{memoir}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[date=iso8601,urldate=iso8601]{biblatex}
+\usepackage{centernot}
+\usepackage{color}
+\usepackage{datetime2}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{tabu}
+\usepackage{url}
+
+\usepackage[scaled=0.85]{FiraMono}
+\usepackage[T1]{fontenc}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+\definecolor{mygreen}{rgb}{0.3,0.6,0.3}
+\definecolor{mygray}{rgb}{0.8,0.8,0.8}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+  % backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\ttfamily,     % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=\null,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bfseries,       % keyword style
+  % language=\null,                % the language of the code
+  % morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\ttfamily,    % the style that is used for the line-numbers
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+  rulecolor=\color{mygray},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname,                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  caption=\lstname ,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\addbibresource{ifs.bib}
+\nocite{*}
+
+\theoremstyle{plain}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}[definition]{Remark}
+
+\newcommand{\psubof}{\subsetneqq}
+\newcommand{\subof}{\subseteq}
+\newcommand{\parens}[1]{\left( #1 \right)}
+\newcommand{\brackets}[1]{\left[ #1 \right]}
+\newcommand{\braces}[1]{\left\{ #1 \right\}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\mset}[1]{\braces{\, #1 \,}}
+\newcommand{\scomp}[2]{\mset{#1 \::\: #2}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\ctext}[1]{$$\text{#1}$$}
+\newcommand{\term}{\textbf}
+\newcommand{\divides}{\mid}
+\newcommand{\code}{\lstinline}
+\newcommand{\lstin}[1]{\lstinputlisting{listings/#1}}
+\newcommand{\dolsign}{\texttt{\$}}
+
+\begin{document}
+\title{Idris from Scratch}
+\author{Peter Harpending \texttt{<peter.harpending@utah.edu>}}
+\maketitle
+
+\tableofcontents
+
+\input{chapters/1.tex}
+
+\printbibliography
+\end{document}

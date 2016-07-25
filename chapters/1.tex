@@ -1,0 +1,53 @@
+\chapter{Getting set up \& toying around in the REPL}
+
+Idris is a dependently typed, purely functional language. We'll learn
+what all of those things mean in a second. For now, it's worth noting
+that Idris guarantees a degree of code quality that you simply can't
+find in most other programming languages.
+
+\section{Setup}
+
+The Idris compiler is written in Haskell, so you need to install
+Haskell first. The Haskell download webpage
+(\url{https://www.haskell.org/downloads}) documents several methods of
+installing Haskell. My personal recommendation is to use Stack
+(\url{http://haskellstack.org}). It makes whole sets of problems with
+Haskell packaging go away.
+
+The instructions for installing Stack change somewhat
+frequently. There are also too many operating systems for me to fit in
+this text. Therefore, I will direct you to the Stack documentation
+(\url{https://docs.haskellstack.org/en/stable/README/#how-to-install}). Find
+your operating system, and follow the instructions.
+
+If you can't find your operating system, I would suggest opening a bug
+in Stack's bug tracker
+(\url{https://github.com/commercialhaskell/stack/issues}), and ask for
+help. In my experience, the Stack people have been extremely helpful
+in resolving my issues.
+
+Moving on. It's worth noting that I own several Linux machines, but I
+do not own a Macintosh or a Windows machine. Macintosh is similar
+enough to Linux that most of my instructions should still work. I have
+positively no idea how to do any of this set up on Windows. If someone
+does, please do add instructions to this text. The git repository is
+located at \url{https://github.com/pharpend/ifs}.
+
+Once you have stack installed on your system, you'll need
+to run some more commands to set things up
+
+\lstin{stack-setup.txt}
+
+The \texttt{\$} indicates that you're supposed to open a terminal, and
+run whatever command comes after it. The commands I gave you will
+update Stack's list of available packages, and then install the
+Haskell compiler, ghc.
+
+To install Idris, run \lstin{stack-install-idris.txt} in a terminal.
+
+If you're on Unix, and it gives you an error about a missing library
+dependency, try installing a package by that name, and suffixing
+\code{-dev}, \code{-devel}, or some such. For instance, I was missing
+the \code{ncurses} library. I installed the package
+\code{ncurses-devel}, and that seemed to fix my problem. (I'm on
+Fedora 24, currently).
